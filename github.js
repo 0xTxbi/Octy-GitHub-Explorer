@@ -1,4 +1,4 @@
-class GitHub {
+class Github {
 
 	constructor() {
 		this.client_id = '01eccde36a2b2fa579d4';
@@ -13,7 +13,9 @@ class GitHub {
 		const profile = await profileResponse.json();
 
 		return {
+
 			profile
+
 		}
 
 	}
