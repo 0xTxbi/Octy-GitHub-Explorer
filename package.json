@@ -1,0 +1,22 @@
+{
+  "name": "octy-github-explorer",
+  "version": "2.0.0",
+  "description": "A GitHub profile info retriever",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechieJossy/Octy-GitHub-Explorer.git"
+  },
+  "author": "Joseph David",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TechieJossy/Octy-GitHub-Explorer/issues"
+  },
+  "homepage": "https://github.com/TechieJossy/Octy-GitHub-Explorer#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}

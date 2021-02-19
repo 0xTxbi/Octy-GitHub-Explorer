@@ -1,9 +1,13 @@
+require(['dotenv'], function (dotenv) {
+	dotenv.config()
+});
+
 class Github {
 
 	constructor() {
 
-		this.client_id = '01eccde36a2b2fa579d4';
-		this.client_secret = '01eccde36a2b2fa579d4';
+		this.client_id = process.env.GITHUB_CLIENT_ID
+		this.client_secret = process.env.GITHUB_CLIENT_SECRET
 		this.repos_count = 5;
 		this.repos_sort = 'created: asc';
 
