@@ -62,7 +62,7 @@ class UI {
 
 		let output = '';
 
-		
+
 		repos.forEach((repo) => {
 
 			output += `

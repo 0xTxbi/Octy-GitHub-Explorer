@@ -1,5 +1,5 @@
 // Instantiate Github
-const github = new Github;
+const github = new GitHub;
 
 // Instantiate UI
 const ui = new UI;
@@ -17,25 +17,25 @@ searchUser.addEventListener('keyup', (e) => {
 
 		// Make HTTP Call
 		github.getUser(userText)
-		.then(data => {
+			.then(data => {
 
-			if (data.profile.message === 'Not Found' ) {
-				
-				// Show Alert
-				ui.showAlert('User Not Found', 'alert alert-danger');
+				if (data.profile.message === 'Not Found') {
 
-			} else {
-				
-				// Display User Profile
-				ui.clearAlert();
-				ui.showProfile(data.profile);
+					// Show Alert
+					ui.showAlert('User Not Found', 'alert alert-danger');
 
-				ui.showRepos(data.repos);
+				} else {
 
-			}
+					// Display User Profile
+					ui.clearAlert();
+					ui.showProfile(data.profile);
 
-		})
-		
+					ui.showRepos(data.repos);
+
+				}
+
+			})
+
 	} else {
 
 		// Clear Profile
