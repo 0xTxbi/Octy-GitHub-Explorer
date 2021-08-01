@@ -1,4 +1,4 @@
-class Github {
+export default class Github {
 
 	constructor() {
 

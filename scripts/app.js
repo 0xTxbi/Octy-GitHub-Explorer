@@ -1,7 +1,12 @@
-// Instantiate Github
-const github = new GitHub;
+// Import classes
+import Github from "./github.js";
+import UI from "./ui.js";
 
-// Instantiate UI
+
+// Instantiate Github class
+const github = new Github;
+
+// Instantiate UI class
 const ui = new UI;
 
 // Search input
