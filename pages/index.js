@@ -19,12 +19,6 @@ function Home() {
                 <div>
                     <div>
                         <h1>Search for GitHub Users</h1>
-                        <p>
-                            Enter a GitHub username to look up
-                        </p>
-                    </div>
-                    <br />
-                    <div id="profile">
                     </div>
                 </div>
             </div>
