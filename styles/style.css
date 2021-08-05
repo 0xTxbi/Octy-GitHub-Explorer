@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+.intro-text {
+    background: #121fcf;
+    background: -webkit-linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+    background: -moz-linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+    background: linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-button {
+    background: rgb(200, 63, 251);
+    background: linear-gradient(90deg, rgba(200, 63, 251, 1) 0%, rgba(77, 70, 252, 1) 100%);
+}
