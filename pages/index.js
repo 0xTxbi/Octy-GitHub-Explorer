@@ -16,10 +16,6 @@ function Home() {
                     <h1 className="intro-text text-7xl font-bold p-1 m-4">Octy GitHub Explorer</h1>
                 </div>
 
-                {/* <div>
-                    <button className='intro-button p-4 rounded-md text-gray-50 shadow-md hover:shadow-lg'>Start your search</button>
-                </div> */}
-
                 {/* Search input form */}
                 <SearchInput />
 
