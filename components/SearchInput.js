@@ -3,15 +3,14 @@ import { Formik, Form, Field } from 'formik'
 
 const SearchInput = () => {
 
-    let inputValue;
-
     return (
         <>
             {/* Form configuration */}
             <Formik
-                initialValues={{ username: '' }}
-                onSubmit={(values, actions) => {
-                    inputValue = values.username
+                initialValues={{ username: 'techiejossy' }}
+                onSubmit={(values) => {
+                    let inputValue = values.username
+                    sessionStorage.setItem('searchInput', inputValue)
                 }}
             >
 
