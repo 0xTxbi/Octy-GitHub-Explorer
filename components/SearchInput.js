@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useSessionStorageString } from 'react-use-window-sessionstorage'
 import { Formik, Form, Field } from 'formik'
 
-const SearchInput = () => {
+function SearchInput({ stars }) {
 
-    const [userInput, setUserInput] = useState()
+    // const [userInput, setUserInput] = useState()
+    console.log(stars)
 
     return (
         <>
@@ -12,9 +13,9 @@ const SearchInput = () => {
             <Formik
                 initialValues={{ username: 'techiejossy' }}
                 onSubmit={(values) => {
-                    let inputValue = values.username
-                    console.log(inputValue)
-                    setUserInput(inputValue)
+                    let userInput = values.username
+                    console.log(userInput)
+                    // setUserInput(inputValue)
                 }}
             >
 
@@ -24,7 +25,7 @@ const SearchInput = () => {
                         <div className="flex items-center content-center border-b py-1 border-blue-400">
                             <Field type="text" name="username" placeholder="user you wish to stalk 👻" className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 leading-tight focus:outline-none"></Field>
                             <button type="submit" className=" bg-blue-400 hover:bg-blue-700 text-sm text-white px-3 py-3 rounded-sm intro-button" style={{ color: "white" }}>Search</button>
-                            <p>{userInput}</p>
+                            {/* <p>{userInput}</p> */}
                         </div>
                     </Form>
                 </div>
@@ -32,6 +33,12 @@ const SearchInput = () => {
             </Formik>
         </>
     )
+}
+
+export async function getServerSideProps(ctx) {
+    const res = await fetch('https://api.github.com/repos/vercel/vercel')
+    const json = await res.json()
+    return { stars: json.stargazers_count }
 }
 
 export default SearchInput
