@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useSessionStorageString } from 'react-use-window-sessionstorage'
 import { Formik, Form, Field } from 'formik'
 
-function SearchInput({ stars }) {
+import Github from '../lib/github'
 
-    // const [userInput, setUserInput] = useState()
-    console.log(stars)
+const SearchInput = (userInput) => {
+
+    // Instantiate GitHub class
+    const gh = new Github
 
     return (
         <>
@@ -13,9 +15,8 @@ function SearchInput({ stars }) {
             <Formik
                 initialValues={{ username: 'techiejossy' }}
                 onSubmit={(values) => {
-                    let userInput = values.username
-                    console.log(userInput)
-                    // setUserInput(inputValue)
+                    userInput = values.username
+                    gh.getUser(userInput).then(response => console.log(response))
                 }}
             >
 
@@ -33,12 +34,6 @@ function SearchInput({ stars }) {
             </Formik>
         </>
     )
-}
-
-export async function getServerSideProps(ctx) {
-    const res = await fetch('https://api.github.com/repos/vercel/vercel')
-    const json = await res.json()
-    return { stars: json.stargazers_count }
 }
 
 export default SearchInput

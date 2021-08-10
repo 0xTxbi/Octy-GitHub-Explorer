@@ -1,10 +1,7 @@
 import Head from 'next/head'
 import SearchInput from '../components/searchInput'
-import { AppRunner } from '../lib/app'
 
-function Home({ stars }) {
-
-    console.log(stars)
+function Home() {
 
     return (
         <>
@@ -22,22 +19,11 @@ function Home({ stars }) {
                 {/* Search input form */}
                 <SearchInput />
 
-                <div>
-                    {/* Generator button */}
-                    <button className="bg-gray-800 p-4 mt-5" style={{ color: "white" }} id="generateUser">Obtain</button>
-                </div>
-
             </div>
 
         </>
     )
 
 }
-
-// Home.getInitialProps = async (ctx) => {
-//     const res = await fetch('https://api.github.com/repos/vercel/next.js')
-//     const json = await res.json()
-//     return { stars: json.stargazers_count }
-// }
 
 export default Home
