@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-import { useSessionStorageString } from 'react-use-window-sessionstorage'
+import React from 'react'
 import { Formik, Form, Field } from 'formik'
 
 import Github from '../lib/github'
 
-const SearchInput = (userInput) => {
+const SearchInput = ({ setUserDetails }) => {
 
     // Instantiate GitHub class
     const gh = new Github
@@ -15,8 +14,7 @@ const SearchInput = (userInput) => {
             <Formik
                 initialValues={{ username: 'techiejossy' }}
                 onSubmit={(values) => {
-                    userInput = values.username
-                    gh.getUser(userInput).then(response => console.log(response))
+                    gh.getUser(values.username).then(response => setUserDetails(response))
                 }}
             >
 
