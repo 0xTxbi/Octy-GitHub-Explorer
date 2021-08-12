@@ -17,7 +17,6 @@ const SearchInput = ({ setUserDetails }) => {
                     gh.getUser(values.username).then(response => setUserDetails(response))
                 }}
             >
-
                 {/* Search input field */}
                 <div className="mt-10">
                     <Form className="w-full max-w-sm m-auto">
