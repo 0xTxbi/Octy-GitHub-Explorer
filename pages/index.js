@@ -1,7 +1,17 @@
 import Head from 'next/head'
-import SearchInput from '../components/searchInput'
+import { useState } from 'react'
+import SearchInput from '../components/SearchInput'
 
 function Home() {
+
+    const [userDetails, setUserDetails] = useState(null)
+
+    if (userDetails) {
+        console.log(userDetails.profile)
+    } else {
+        console.log('hey')
+    }
+
 
     return (
         <>
@@ -17,9 +27,25 @@ function Home() {
                 </div>
 
                 {/* Search input form */}
-                <SearchInput />
+                <SearchInput setUserDetails={setUserDetails} />
+
+                {/* Display User Results */}
+                {userDetails ? (
+                    <div id="search-result-success" className="mt-5 container">
+
+                        <div id="user-avatar" className="container flex justify-center mb-2">
+                            <img src={userDetails.profile.avatar_url} alt="" className="rounded-full h-20" />
+                        </div>
+                        <div className="user-info">
+                            <h2 className="text-2xl font-bold">{userDetails.profile.name}</h2>
+                            <p className="text-sm italic">{userDetails.profile.bio}</p>
+                        </div>
+
+                    </div>
+                ) : <p className="mt-5">start searching 🥱</p>}
 
             </div>
+
 
         </>
     )

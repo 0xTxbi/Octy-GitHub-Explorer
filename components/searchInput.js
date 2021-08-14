@@ -9,6 +9,7 @@ const SearchInput = ({ setUserDetails }) => {
     const gh = new Github
 
     return (
+
         <>
             {/* Form configuration */}
             <Formik
@@ -29,6 +30,7 @@ const SearchInput = ({ setUserDetails }) => {
                 </div>
 
             </Formik>
+
         </>
     )
 }
