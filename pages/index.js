@@ -40,13 +40,6 @@ function Home() {
                 {userDetails ? (
                     <div id="search-result-success" className="mt-5 container">
 
-                        {userDetails.repos.map(repo => {
-
-                            <h1>{repo.name}</h1>
-
-
-                        })}
-
                         <div id="user-avatar" className="container flex justify-center mb-2">
                             <img src={userDetails.profile.avatar_url} alt="" className="rounded-full h-20" />
                         </div>
@@ -55,8 +48,6 @@ function Home() {
                             <p className="text-sm italic">{userDetails.profile.bio}</p>
                             <p className="text-sm italic">{userDetails.profile.followers} followers</p>
                         </div>
-
-                        <h1>{userDetails.profile.name}'s Repositories</h1>
 
 
 
