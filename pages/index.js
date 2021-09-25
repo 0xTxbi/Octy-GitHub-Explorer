@@ -4,21 +4,25 @@ import SearchInput from '../components/SearchInput'
 
 function Home() {
 
+    let repoArray;
+
     const [userDetails, setUserDetails] = useState(null)
 
     if (userDetails) {
-        console.log(userDetails.repos)
+        // console.log(userDetails.repos)
+
+        repoArray = [...userDetails.repos]
+
+        // tempRepo = userDetails.repos.map(repo => {
+        //     repo.id;
+        //     console.log(repo.id);
+        // })
+
+        console.log(repoArray)
+
     } else {
         console.log('hey')
     }
-
-    // userDetails.repos.map(repo => {
-
-    //     console.log(repo.name)
-
-
-    // })
-
 
     return (
         <>
@@ -44,9 +48,19 @@ function Home() {
                             <img src={userDetails.profile.avatar_url} alt="" className="rounded-full h-20" />
                         </div>
                         <div className="user-profile-info">
-                            <h2 className="text-2xl font-bold">{userDetails.profile.name}</h2>
+                            <h2 className="text-2xl font-bold"><a href={userDetails.profile.html_url}>{userDetails.profile.name}</a></h2>
                             <p className="text-sm italic">{userDetails.profile.bio}</p>
                             <p className="text-sm italic">{userDetails.profile.followers} followers</p>
+                        </div>
+
+                        <div className="user-repo-info">
+                            {repoArray.forEach(repo => {
+
+                                <h2>{repo.full_name}</h2>
+                            })}
+
+                            <h2>{repoArray[2].full_name}</h2>
+
                         </div>
 
 
