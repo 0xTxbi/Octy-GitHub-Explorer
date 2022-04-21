@@ -1,8 +1,7 @@
-import '../styles/style.css'
+import '../styles/globals.css'
 
-
-function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
+function OctyGitHubExplorer({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default MyApp
+export default OctyGitHubExplorer

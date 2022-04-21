@@ -1,39 +1,20 @@
 {
   "name": "octy-github-explorer",
-  "version": "1.1.0",
-  "description": "A minimal web application that returns basic data of a user's GitHub details and repositories",
-  "main": "app.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TechieJossy/Octy-GitHub-Explorer.git"
-  },
-  "keywords": [
-    "github"
-  ],
-  "author": "Joseph David",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TechieJossy/Octy-GitHub-Explorer/issues"
-  },
-  "homepage": "https://github.com/TechieJossy/Octy-GitHub-Explorer#readme",
-  "devDependencies": {
-    "autoprefixer": "^10.3.5",
-    "postcss": "^8.3.7",
-    "tailwindcss": "^2.2.15"
-  },
   "dependencies": {
-    "browserify": "^17.0.0",
-    "dotenv": "^10.0.0",
-    "formik": "^2.2.9",
-    "next": "^11.1.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-use-window-sessionstorage": "^1.0.9"
+    "next": "12.1.5",
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5"
   }
 }
