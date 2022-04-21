@@ -1,0 +1,14 @@
+// Custom Chakra UI theme
+import { extendTheme } from '@chakra-ui/react'
+
+const config = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false,
+}
+
+export const theme = extendTheme({
+  config,
+  fonts: {
+    heading: 'Inter, sans-serif',
+  }
+})

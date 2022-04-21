@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -8,28 +9,17 @@ export default function Home() {
       <Head>
         <title>Octy GitHub Explorer</title>
         <meta name="description" content="View the geeky details of your GitHub account that you seek." />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Heading mb={5}>
           Octy GitHub Explorer
-        </h1>
+        </Heading>
 
-        <p className={styles.description}>
-          View the geeky details of the GitHub account that you seek.
-        </p>
+        <Text>
+          view the geeky details of the GitHub account that you seek.
+        </Text>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://github.com/0xTxbi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Built by 0xTxbi
-        </a>
-      </footer>
     </div>
   )
 }
