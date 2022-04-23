@@ -4,3 +4,5 @@
 .LSOverride
 node_modules
 .next
+.prettierrc.json
+.env.local
