@@ -1,3 +1,3 @@
 # Octy GitHub Explorer
 
-View the geeky details of your GitHub account you seek.
+view the geeky details of the GitHub account you seek.
