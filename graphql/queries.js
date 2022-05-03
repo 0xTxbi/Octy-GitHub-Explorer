@@ -17,12 +17,32 @@ export const GET_USER = gql`
     }
 `
 
+// Get a user
+export const GET_USER_SINGLE_ID = gql`
+    query GetUser($login: String!) {
+        user(login: $login) {
+            login
+        }
+    }
+`
+
 // Get current authenticated user
 export const GET_CURRENT_USER = gql`
     {
         viewer {
             login
             name
+        }
+    }
+`
+
+export const GET_CURRENT_RATE_LIMIT = gql`
+    query GetRateLimit {
+        rateLimit {
+            cost
+            limit
+            remaining
+            resetAt
         }
     }
 `

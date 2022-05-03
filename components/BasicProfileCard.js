@@ -1,18 +1,7 @@
-import {
-    Badge,
-    Button,
-    Center,
-    Flex,
-    Heading,
-    Icon,
-    Image,
-    Link,
-    Stack,
-    Text,
-    useColorModeValue,
-} from '@chakra-ui/react'
+import { Badge, Button, Center, Flex, Heading, Icon, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { VscGithubAlt } from 'react-icons/vsc'
-import { convertToUTCFull } from '../utils/utils'
+import { convertToUTCMonth } from '../utils/utils'
+import Link from 'next/link'
 
 export default function BasicProfileCard({ userData }) {
     return (
@@ -41,13 +30,13 @@ export default function BasicProfileCard({ userData }) {
                         {userData?.bio}
                     </Text>
                     <Badge px={2} py={1} colorScheme={'green'} fontWeight={'400'}>
-                        Joined {convertToUTCFull(userData?.createdAt)}
+                        Joined {convertToUTCMonth(userData?.createdAt)}
                     </Badge>
                     <Badge px={2} py={1} colorScheme={'blue'} fontWeight={'400'}>
                         {userData?.followers?.totalCount} followers
                     </Badge>
 
-                    <Stack
+                    {/* <Stack
                         width={'100%'}
                         mt={'2rem'}
                         direction={'row'}
@@ -73,20 +62,17 @@ export default function BasicProfileCard({ userData }) {
                             fontSize={'sm'}
                             rounded={'full'}
                             bg={'blue.400'}
-                            color={'white'}
-                            boxShadow={
-                                '0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)'
-                            }
-                            _hover={{
-                                bg: 'blue.500',
-                            }}
+                            rightIcon={<Icon as={VscGithubAlt} />}
                             _focus={{
                                 bg: 'blue.500',
                             }}
+                            _hover={{
+                                bg: 'blue.500',
+                            }}
                         >
-                            Full Stats
+                            <Link href={`/summary`}>Full Stats</Link>
                         </Button>
-                    </Stack>
+                    </Stack> */}
                 </Stack>
             </Stack>
         </Center>
