@@ -40,6 +40,8 @@ export default function Home() {
         localStorage.setItem('searchedUser', inputValue)
     }
 
+    console.log(resultData)
+
     return (
         <div className={styles.container}>
             <Head>

@@ -36,7 +36,7 @@ export default function BasicProfileCard({ userData }) {
                         {userData?.followers?.totalCount} followers
                     </Badge>
 
-                    {/* <Stack
+                    <Stack
                         width={'100%'}
                         mt={'2rem'}
                         direction={'row'}
@@ -50,14 +50,18 @@ export default function BasicProfileCard({ userData }) {
                             rounded={'full'}
                             rightIcon={<Icon as={VscGithubAlt} />}
                             _focus={{
-                                bg: 'gray.200',
+                                bg: 'blue.500',
                             }}
+                            _hover={{
+                                bg: 'blue.500',
+                            }}
+                            bg={'blue.400'}
                         >
                             <Link href={userData?.url} target={'_blank'}>
                                 View on
                             </Link>
                         </Button>
-                        <Button
+                        {/* <Button
                             flex={1}
                             fontSize={'sm'}
                             rounded={'full'}
@@ -71,8 +75,8 @@ export default function BasicProfileCard({ userData }) {
                             }}
                         >
                             <Link href={`/summary`}>Full Stats</Link>
-                        </Button>
-                    </Stack> */}
+                        </Button> */}
+                    </Stack>
                 </Stack>
             </Stack>
         </Center>
