@@ -1,8 +1,8 @@
 import { Badge, Button, Center, Flex, Heading, Icon, Image, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 
-export default function NoUserFoundCard() {
+export default function NoUserFoundCard({ displayValue }) {
     return (
-        <Center py={6}>
+        <Center py={6} display={displayValue}>
             <Stack
                 borderWidth="1px"
                 borderRadius="lg"

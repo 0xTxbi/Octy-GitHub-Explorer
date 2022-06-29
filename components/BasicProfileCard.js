@@ -3,9 +3,9 @@ import { VscGithubAlt } from 'react-icons/vsc'
 import { convertToUTCMonth } from '../utils/utils'
 import Link from 'next/link'
 
-export default function BasicProfileCard({ userData }) {
+export default function BasicProfileCard({ userData, displayValue }) {
     return (
-        <Center py={6}>
+        <Center py={6} display={displayValue}>
             <Stack
                 borderWidth="1px"
                 borderRadius="lg"
@@ -57,8 +57,8 @@ export default function BasicProfileCard({ userData }) {
                             }}
                             bg={'blue.400'}
                         >
-                            <Link href={userData?.url} target={'_blank'}>
-                                View on
+                            <Link href={userData?.url}>
+                                <a target={'_blank'}>View on</a>
                             </Link>
                         </Button>
                         {/* <Button

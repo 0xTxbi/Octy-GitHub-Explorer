@@ -3,7 +3,6 @@ import { Button, Heading, Icon, IconButton, Input, InputGroup, InputRightElement
 import Head from 'next/head'
 import { useState } from 'react'
 import { FaRegTimesCircle } from 'react-icons/fa'
-import { FiPlus } from 'react-icons/fi'
 import BasicProfileCard from '../components/BasicProfileCard'
 import Loader from '../components/Loader'
 import NoUserFoundCard from '../components/NoUserFoundCard'
@@ -37,7 +36,6 @@ export default function Home() {
 
         getRateLimit()
         setSecDisplay('block')
-        localStorage.setItem('searchedUser', inputValue)
     }
 
     console.log(resultData)
@@ -77,7 +75,11 @@ export default function Home() {
                 {resultLoading ? <Loader /> : null}
 
                 {/* {resultData !== undefined ? <BasicProfileCard userData={resultData?.user} /> : null} */}
-                {resultData?.user == null ? <NoUserFoundCard /> : <BasicProfileCard userData={resultData?.user} />}
+                {resultData?.user == null ? (
+                    <NoUserFoundCard displayValue={secDisplay} />
+                ) : (
+                    <BasicProfileCard userData={resultData?.user} displayValue={secDisplay} />
+                )}
             </main>
 
             <Stack direction={'row'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
