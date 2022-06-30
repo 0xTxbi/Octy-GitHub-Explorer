@@ -6,6 +6,7 @@ import {
     Heading,
     Icon,
     Image,
+    Link,
     Modal,
     ModalBody,
     ModalCloseButton,
@@ -21,7 +22,6 @@ import {
 import { VscGithubAlt } from 'react-icons/vsc'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
 import { convertToUTCMonth } from '../utils/utils'
-import Link from 'next/link'
 import FullStatsContent from './FullStatsContent'
 import { GET_USER_FULL_STATS } from '../graphql/queries'
 import { useLazyQuery } from '@apollo/client'
@@ -72,18 +72,18 @@ export default function BasicProfileCard({ userData, displayValue }) {
                         justifyContent={'space-between'}
                         alignItems={'center'}
                     >
-                        <Button
-                            flex={1}
-                            fontSize={'sm'}
-                            rounded={'full'}
-                            rightIcon={<Icon as={VscGithubAlt} />}
-                            colorScheme="blue"
-                            variant="outline"
-                        >
-                            <Link href={userData?.url}>
-                                <a target={'_blank'}>View on</a>
-                            </Link>
-                        </Button>
+                        <Link href={userData?.url} target="_blank">
+                            <Button
+                                flex={1}
+                                fontSize={'sm'}
+                                rounded={'full'}
+                                rightIcon={<Icon as={VscGithubAlt} />}
+                                colorScheme="blue"
+                                variant="outline"
+                            >
+                                View on
+                            </Button>
+                        </Link>
                         <Button
                             isLoading={resultLoading}
                             loadingText="Loading"

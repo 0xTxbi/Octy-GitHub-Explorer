@@ -6,6 +6,7 @@ import { FaRegTimesCircle } from 'react-icons/fa'
 import BasicProfileCard from '../components/BasicProfileCard'
 import Loader from '../components/Loader'
 import NoUserFoundCard from '../components/NoUserFoundCard'
+import RateLimitButton from '../components/RateLimitButton'
 import { GET_CURRENT_RATE_LIMIT, GET_USER } from '../graphql/queries'
 import styles from '../styles/Home.module.css'
 
@@ -81,23 +82,7 @@ export default function Home() {
             </main>
 
             <Stack direction={'row'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
-                <Text
-                    my={'10'}
-                    display={secDisplay}
-                    bg={'blue.500'}
-                    color={'white'}
-                    position="fixed"
-                    bottom="0"
-                    py={2}
-                    px={2}
-                    boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 35%), 0 10px 10px -5px rgb(66 153 225 / 35%)'}
-                    w={'auto'}
-                    borderRadius={'3px'}
-                    right={['2rem']}
-                    zIndex={1}
-                >
-                    {`${rateLimitData?.rateLimit?.remaining}/${rateLimitData?.rateLimit?.limit} searches left`}
-                </Text>
+                <RateLimitButton rateLimitData={rateLimitData} secDisplay={secDisplay} />
             </Stack>
         </div>
     )
