@@ -19,3 +19,11 @@ export const getUsersID = (username) => {
         },
     }
 }
+
+// Truncate text
+export function truncateText(input) {
+    if (input.length > 20) {
+        return input.substring(0, 30) + '...'
+    }
+    return input
+}

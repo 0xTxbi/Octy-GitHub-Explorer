@@ -17,11 +17,33 @@ export const GET_USER = gql`
     }
 `
 
-// Get a user
-export const GET_USER_SINGLE_ID = gql`
-    query GetUser($login: String!) {
+// Get user full stats
+export const GET_USER_FULL_STATS = gql`
+    query GetUserFullStats($login: String!, $privacy: RepositoryPrivacy, $isFork: Boolean, $last: Int) {
         user(login: $login) {
-            login
+            avatarUrl
+            name
+            bio
+            repositories(privacy: $privacy, isFork: $isFork, last: $last) {
+                totalCount
+                nodes {
+                    name
+                    description
+                    primaryLanguage {
+                        name
+                        color
+                    }
+                    commitComments {
+                        totalCount
+                    }
+                    createdAt
+                    updatedAt
+                    homepageUrl
+                    pushedAt
+                    url
+                    stargazerCount
+                }
+            }
         }
     }
 `

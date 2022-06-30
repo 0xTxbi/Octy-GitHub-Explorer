@@ -38,8 +38,6 @@ export default function Home() {
         setSecDisplay('block')
     }
 
-    console.log(resultData)
-
     return (
         <div className={styles.container}>
             <Head>
@@ -86,20 +84,17 @@ export default function Home() {
                 <Text
                     my={'10'}
                     display={secDisplay}
-                    bg={'blue.400'}
+                    bg={'blue.500'}
                     color={'white'}
                     position="fixed"
                     bottom="0"
                     py={2}
-                    pl={2}
+                    px={2}
                     boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 35%), 0 10px 10px -5px rgb(66 153 225 / 35%)'}
-                    w={'20rem'}
+                    w={'auto'}
                     borderRadius={'3px'}
                     right={['2rem']}
                     zIndex={1}
-                    _hover={{
-                        bg: 'blue.500',
-                    }}
                 >
                     {`${rateLimitData?.rateLimit?.remaining}/${rateLimitData?.rateLimit?.limit} searches left`}
                 </Text>
