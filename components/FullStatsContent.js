@@ -48,20 +48,17 @@ function FullStatsContent({ fullStatsData }) {
                         <Th>description</Th>
                         <Th isNumeric>Language</Th>
                         <Th></Th>
+                        <Th></Th>
                     </Tr>
                 </Thead>
                 <Tbody>
                     {fullStatsData?.repositories?.nodes?.map((repo) => (
                         <Tr>
                             <Td>
-                                <Text noOfLines="1">
-                                    <Link target="_blank" href={repo?.url}>
-                                        {repo?.name.toLowerCase()}
-                                    </Link>
-                                </Text>
+                                <Text>{repo?.name.toLowerCase()}</Text>
                             </Td>
                             <Td>
-                                <Text>{truncateText(repo?.description.toLowerCase())}</Text>
+                                <Text>{repo?.description}</Text>
                             </Td>
                             <Td isNumeric>
                                 <Badge colorScheme="green">{repo?.primaryLanguage?.name}</Badge>
@@ -72,6 +69,8 @@ function FullStatsContent({ fullStatsData }) {
                                         <Icon as={BiLink} />
                                     </Link>
                                 ) : null}
+                            </Td>
+                            <Td>
                                 <Link target="_blank" href={repo?.url}>
                                     <Icon as={VscGithub} />
                                 </Link>

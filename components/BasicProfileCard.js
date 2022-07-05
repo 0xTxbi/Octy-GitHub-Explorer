@@ -21,10 +21,11 @@ import {
 } from '@chakra-ui/react'
 import { VscGithubAlt } from 'react-icons/vsc'
 import { FiEye, FiEyeOff } from 'react-icons/fi'
-import { convertToUTCMonth } from '../utils/utils'
+import { convertToUTCMonth, formatFollowerCount } from '../utils/utils'
 import FullStatsContent from './FullStatsContent'
 import { GET_USER_FULL_STATS } from '../graphql/queries'
 import { useLazyQuery } from '@apollo/client'
+import Loader from './Loader'
 
 export default function BasicProfileCard({ userData, displayValue }) {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -57,11 +58,11 @@ export default function BasicProfileCard({ userData, displayValue }) {
                     <Text textAlign={'center'} color={useColorModeValue('gray.700', 'gray.400')} px={3}>
                         {userData?.bio}
                     </Text>
+                    <Badge px={2} py={1} colorScheme={'blue'} fontWeight={'400'}>
+                        {formatFollowerCount(userData?.followers?.totalCount)} followers
+                    </Badge>
                     <Badge px={2} py={1} colorScheme={'green'} fontWeight={'400'}>
                         Joined {convertToUTCMonth(userData?.createdAt)}
-                    </Badge>
-                    <Badge px={2} py={1} colorScheme={'blue'} fontWeight={'400'}>
-                        {userData?.followers?.totalCount} followers
                     </Badge>
 
                     <Stack
@@ -97,6 +98,7 @@ export default function BasicProfileCard({ userData, displayValue }) {
                                         last: 5,
                                     },
                                 })
+                                console.log(resultLoading)
                             }}
                             flex={1}
                             fontSize={'sm'}
@@ -122,7 +124,11 @@ export default function BasicProfileCard({ userData, displayValue }) {
                         <ModalHeader>{`${userData?.login}'s Full Stats`}</ModalHeader>
                         <ModalCloseButton />
                         <ModalBody p={10}>
-                            <FullStatsContent fullStatsData={resultData?.user} />
+                            {resultLoading === true ? (
+                                <Loader />
+                            ) : (
+                                <FullStatsContent fullStatsData={resultData?.user} />
+                            )}
                         </ModalBody>
                         <ModalFooter>
                             <Button

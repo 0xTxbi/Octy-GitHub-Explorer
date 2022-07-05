@@ -1,12 +1,12 @@
 import { Text } from '@chakra-ui/react'
 import styles from '../styles/RateLimitButton.module.css'
 
-function RateLimitButton({ rateLimitData, secDisplay }) {
+function RateLimitButton({ rateLimitData }) {
     return (
         <Text
             className={styles.floating}
             my={'10'}
-            display={secDisplay}
+            display={rateLimitData === undefined ? 'none' : 'block'}
             bg={'blue.500'}
             color={'white'}
             position="fixed"
